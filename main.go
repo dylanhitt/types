@@ -6,7 +6,6 @@ package main
 import (
 	monitoring "github.com/coreos/prometheus-operator/pkg/apis/monitoring"
 	monitoringv1 "github.com/coreos/prometheus-operator/pkg/apis/monitoring/v1"
-	istiov1alpha3 "github.com/knative/pkg/apis/istio/v1alpha3"
 	clusterSchema "github.com/rancher/types/apis/cluster.cattle.io/v3/schema"
 	managementSchema "github.com/rancher/types/apis/management.cattle.io/v3/schema"
 	publicSchema "github.com/rancher/types/apis/management.cattle.io/v3public/schema"
@@ -111,13 +110,7 @@ func main() {
 		},
 		nil,
 	)
-	generator.GenerateNativeTypes(istiov1alpha3.SchemeGroupVersion,
-		[]interface{}{
-			istiov1alpha3.VirtualService{},
-			istiov1alpha3.DestinationRule{},
-		},
-		nil,
-	)
+
 	generator.GenerateNativeTypes(apiregistrationv1.SchemeGroupVersion,
 		nil,
 		[]interface{}{
