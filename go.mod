@@ -1,4 +1,4 @@
-module github.com/rancher/types
+module github.com/dylanhitt/types
 
 go 1.13
 
